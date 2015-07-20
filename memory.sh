@@ -1,3 +1,3 @@
 #!/bin/bash
 
-dmidecode -t memory | grep -E "Locator|Size|Form\ Factor|Type:|Speed" | grep -E -v "Correction|Bank"
+dmidecode -t memory | grep -E "Locator|Size|Form\ Factor|Type:|Speed" | grep -v "Correction"
