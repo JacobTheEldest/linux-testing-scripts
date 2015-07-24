@@ -29,11 +29,39 @@ total=$((total / 2))
 iteration="0"
 while [ $iteration -lt $total ]; do
 	iteration=$((iteration + 1))
+	
+	# store the results in variables
+	bank=$(dmidecode -t memory | grep -m $iteration "Bank Locator:" | tail -1)
+	locator=$(dmidecode -t memory | grep -v Bank | grep -m $iteration "Locator:" | tail -1)
+	size=$(dmidecode -t memory | grep -m $iteration "Size:" | tail -1 | awk {'print $2'})
+	form=$(dmidecode -t memory | grep -m $iteration "Form Factor:" | tail -1)
+	type=$(dmidecode -t memory | grep -v Correction | grep -m $iteration "Type:" | tail -1 | awk {'print $2'})
+	speed=$(dmidecode -t memory | grep -m $iteration "Speed:" | tail -1 | awk {'print $2'})
+	
+	# convert size into GB if necessary
+	if [ $size -gt 512 ]; then
+		size=$((size / 1024))
+		size="Size: $size GB"
+	else
+		size="Size: $size MB"
+	fi
+	
+	# convert Type from DDR to PC
+	type=${type:3}
+	type="Type: PC$type"
+	
+	# convert speed
+	speed=$((speed * 8))
+	speed=$((speed - (speed % 100)))
+	speed="Speed: $speed"
+	
+	#display the results
 	echo
-	dmidecode -t memory | grep -m $iteration "Bank Locator:" | tail -1
-	dmidecode -t memory | grep -v Bank | grep -m $iteration "Locator:" | tail -1
-	dmidecode -t memory | grep -m $iteration "Size:" | tail -1
-	dmidecode -t memory | grep -m $iteration "Form Factor:" | tail -1
-	dmidecode -t memory | grep -v Correction | grep -m $iteration "Type:" | tail -1
-	dmidecode -t memory | grep -m $iteration "Speed:" | tail -1
+	echo $bank
+	echo $locator
+	echo $size
+	echo $form
+	echo $type
+	echo $speed
 done
+echo
