@@ -39,21 +39,29 @@ while [ $iteration -lt $total ]; do
 	speed=$(dmidecode -t memory | grep -m $iteration "Speed:" | tail -1 | awk {'print $2'})
 	
 	# convert size into GB if necessary
-	if [ ($size -gt 512) -a ($size != "No") ]; then
-		size=$((size / 1024))
-		size="Size: $size GB"
+	if [ $size != "No" ]; then
+		if [ $size -gt 512 ]; then
+			size=$((size / 1024))
+			size="Size: $size GB"
+		else
+			size="Size: $size MB"
+		fi
+	
+		# convert Type from DDR to PC
+		type=${type:3}
+		type="Type: PC$type"
+	
+		# convert speed
+		speed=$((speed * 8))
+		speed=$((speed - (speed % 100)))
+		speed="Speed: $speed"
+
 	else
-		size="Size: $size MB"
+		size="Size: No Memory Module"
+		form="Form Factor: No Memory Module"
+		type="Type: No Memory Module"
+		speed="Speed: No Memory Module"
 	fi
-	
-	# convert Type from DDR to PC
-	type=${type:3}
-	type="Type: PC$type"
-	
-	# convert speed
-	speed=$((speed * 8))
-	speed=$((speed - (speed % 100)))
-	speed="Speed: $speed"
 	
 	#display the results
 	echo
