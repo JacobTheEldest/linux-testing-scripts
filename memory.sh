@@ -39,7 +39,7 @@ while [ $iteration -lt $total ]; do
 	speed=$(dmidecode -t memory | grep -m $iteration "Speed:" | tail -1 | awk {'print $2'})
 	
 	# convert size into GB if necessary
-	if [ $size -gt 512 ]; then
+	if [ ($size -gt 512) -a ($size != "No") ]; then
 		size=$((size / 1024))
 		size="Size: $size GB"
 	else
