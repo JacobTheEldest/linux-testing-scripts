@@ -1,11 +1,9 @@
 #!/bin/bash
 
-if [ -d "/media/ubuntu/" ]; then
-	while [ 1 ]; do
-		ls /media/ubuntu/
-	done
-else
-	while [ 1 ]; do
-		ls /media/
-	done
-fi
+cddir=""
+
+while [ "$cddir" = "" ]; do
+	cddir=$(lsblk | grep sr0 | awk {'print $7'})
+done
+
+ls $cddir
