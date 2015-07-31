@@ -22,6 +22,12 @@ fi
 if [ "$hddmanu" = "Hitachi" ]; then
 	hddmanu="HGST"
 fi
+if [ "$hddsize" -ge 1000 ] && [ $hddsize -le 1024 ]; then
+	hddsize="1 TB"
+fi
+if [ "$hddsize" -ge 2000 ] && [ $hddsize -le 2048 ]; then
+	hddsize="2 TB"
+fi
 
 # Encodes the "Model Number:" field into appropriate files
 if [ ! -d /tmp/qrhdd/ ]; then
