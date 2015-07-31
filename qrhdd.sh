@@ -27,12 +27,12 @@ fi
 if [ ! -d /tmp/qrhdd/ ]; then
 	mkdir /tmp/qrhdd
 fi
-rm /tmp/qrhdd/* #Clear the directory before creating new files
+rm -f /tmp/qrhdd/* #Clear the directory before creating new files
 qrencode -l H -o /tmp/qrhdd/0HDDManu.png "$hddmanu"
 qrencode -l H -o /tmp/qrhdd/1HDDModelNumber.png "$hddmodelnumber"
-qrencode -l H -o /tmp/qrhdd/2HDDSerialNumber.png "$hddserial"
-qrencode -l H -o /tmp/qrhdd/3HDDSize.png "$hddsize"
-qrencode -l H -o /tmp/qrhdd/4HDDRate.png "$hddrate"
+qrencode -l H -o /tmp/qrhdd/2HDDSize.png "$hddsize"
+qrencode -l H -o /tmp/qrhdd/3HDDRate.png "$hddrate"
+qrencode -l H -o /tmp/qrhdd/4HDDSerialNumber.png "$hddserial"
 
 # Display QR Codes
 echo "You can cycle through the QR Codes with the arrow keys."

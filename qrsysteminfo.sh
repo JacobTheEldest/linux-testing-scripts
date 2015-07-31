@@ -7,7 +7,7 @@ serial=$(dmidecode -t 1 | grep "Serial\ Number" | awk '{print $NF}')
 if [ ! -d /tmp/systeminfo/ ]; then
 	mkdir /tmp/systeminfo
 fi
-rm /tmp/systeminfo/* #Clear the directory before creating new files
+rm -f /tmp/systeminfo/* #Clear the directory before creating new files
 qrencode -l H -o /tmp/systeminfo/serial.png "$serial"
 
 # Display QR Codes
