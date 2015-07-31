@@ -1,3 +1,6 @@
 #!/bin/bash
 
-lscpu | grep -E "Model\ name:|socket:"
+echo
+lscpu | grep "Model\ name:"
+lscpu | grep "socket:"
+echo

@@ -15,16 +15,24 @@ hddrate=$(hdparm -I /dev/sda | grep Rate | awk '{print $NF}')
 hddsize=$(hdparm -I /dev/sda | grep GB | awk '{print $(NF-1)}')
 hddsize=${hddsize:1}
 
+# Adjust the variables to match what the database expects
+if [ "$hddmanu" = "WDC" ]; then
+	hddmanu="Western Digital"
+fi
+if [ "$hddmanu" = "Hitachi" ]; then
+	hddmanu="HGST"
+fi
+
 # Encodes the "Model Number:" field into appropriate files
 if [ ! -d /tmp/qrhdd/ ]; then
 	mkdir /tmp/qrhdd
 fi
 rm /tmp/qrhdd/* #Clear the directory before creating new files
-qrencode -l H -o /tmp/qrhdd/0HDDManu.png $hddmanu
-qrencode -l H -o /tmp/qrhdd/1HDDModelNumber.png $hddmodelnumber
-qrencode -l H -o /tmp/qrhdd/2HDDSerialNumber.png $hddserial
-qrencode -l H -o /tmp/qrhdd/3HDDSize.png $hddsize
-qrencode -l H -o /tmp/qrhdd/4HDDRate.png $hddrate
+qrencode -l H -o /tmp/qrhdd/0HDDManu.png "$hddmanu"
+qrencode -l H -o /tmp/qrhdd/1HDDModelNumber.png "$hddmodelnumber"
+qrencode -l H -o /tmp/qrhdd/2HDDSerialNumber.png "$hddserial"
+qrencode -l H -o /tmp/qrhdd/3HDDSize.png "$hddsize"
+qrencode -l H -o /tmp/qrhdd/4HDDRate.png "$hddrate"
 
 # Display QR Codes
 echo "You can cycle through the QR Codes with the arrow keys."
