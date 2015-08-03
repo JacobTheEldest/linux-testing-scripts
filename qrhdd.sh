@@ -19,14 +19,17 @@ hddsize=${hddsize:1}
 if [ "$hddmanu" = "WDC" ]; then
 	hddmanu="Western Digital"
 fi
+
 if [ "$hddmanu" = "Hitachi" ]; then
 	hddmanu="HGST"
 fi
-if [ "$hddsize" -ge 1000 ] && [ $hddsize -le 1024 ]; then
-	hddsize="1 TB"
-fi
-if [ "$hddsize" -ge 2000 ] && [ $hddsize -le 2048 ]; then
-	hddsize="2 TB"
+
+if [ $hddsize -ge 1000 ] && [ $hddsize -le 1024 ]; then
+	hddsize="1 TB"	
+elif [ $hddsize -ge 2000 ] && [ $hddsize -le 2048 ]; then
+	hddsize="2 TB"	
+elif [ $hddsize -ge 3000 ] && [ $hddsize -le 3072 ]; then
+	hddsize="3 TB"
 fi
 
 # Encodes the "Model Number:" field into appropriate files

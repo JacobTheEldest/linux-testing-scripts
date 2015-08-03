@@ -1,0 +1,4 @@
+
+       product: MCP7A [GeForce 9400]
+       vendor: NVIDIA Corporation
+
