@@ -3,6 +3,7 @@
        product: MCP89 [GeForce 320M]
        vendor: NVIDIA Corporation
 
+
 	Serial Number: W89443R85PK
 
        product: MCP7A [GeForce 9400]
