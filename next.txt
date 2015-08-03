@@ -1,0 +1,4 @@
+-Figure out how to parse cpu.sh output to match what the database expects to facilitate QR scanning
+
+-Test graphics.sh on PCs. Accuracy on Macs is unacceptable. Will need to show the system serial qr and tell the user to look it up on everymac using what info the script can gather.
+
