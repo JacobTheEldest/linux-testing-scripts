@@ -1,3 +1,4 @@
+	Serial Number: W89443R85PK
 
        product: MCP7A [GeForce 9400]
        vendor: NVIDIA Corporation
