@@ -3,3 +3,8 @@
 Model name:            Intel(R) Core(TM)2 Duo CPU     E7600  @ 3.06GHz
 Core(s) per socket:    2
 
+	Serial Number: W8034731ATP
+
+Model name:            Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz
+Core(s) per socket:    2
+

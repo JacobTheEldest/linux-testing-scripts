@@ -3,3 +3,8 @@
        product: MCP7A [GeForce 9400]
        vendor: NVIDIA Corporation
 
+	Serial Number: W8034731ATP
+
+       product: MCP89 [GeForce 320M]
+       vendor: NVIDIA Corporation
+
