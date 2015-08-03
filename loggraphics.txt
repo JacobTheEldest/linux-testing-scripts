@@ -22,3 +22,9 @@
        vendor: NVIDIA Corporation
 
 
+	Serial Number: W894349G5PK
+
+       product: MCP7A [GeForce 9400]
+       vendor: NVIDIA Corporation
+
+
