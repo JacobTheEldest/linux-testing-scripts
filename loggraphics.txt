@@ -64,3 +64,9 @@
        vendor: NVIDIA Corporation
 
 
+	Serial Number: YM9140U10TL
+
+       product: G96 [GeForce GT 120]
+       vendor: NVIDIA Corporation
+
+
