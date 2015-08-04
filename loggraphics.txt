@@ -58,3 +58,9 @@
        vendor: NVIDIA Corporation
 
 
+	Serial Number: C07FQ158DD6L
+
+       product: MCP89 [GeForce 320M]
+       vendor: NVIDIA Corporation
+
+
