@@ -52,3 +52,9 @@
        vendor: Advanced Micro Devices, Inc. [AMD/ATI]
 
 
+	Serial Number: C07CX408DD6H
+
+       product: MCP89 [GeForce 320M]
+       vendor: NVIDIA Corporation
+
+

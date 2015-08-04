@@ -52,3 +52,9 @@ Model name:            Intel(R) Core(TM)2 Duo CPU     T7700  @ 2.40GHz
 Core(s) per socket:    2
 
 
+	Serial Number: C07CX408DD6H
+
+Model name:            Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz
+Core(s) per socket:    2
+
+
