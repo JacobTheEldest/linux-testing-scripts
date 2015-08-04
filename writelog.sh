@@ -10,7 +10,7 @@ else
 	echo "$sysserial" >> logcpu.txt
 	./cpu.sh >> logcpu.txt
 	echo >> logcpu.txt
-	echo "Entry add to logcpu.txt"
+	echo "Entry added to logcpu.txt"
 	changed="yes"
 fi
 
