@@ -46,3 +46,9 @@
        vendor: Advanced Micro Devices, Inc. [AMD/ATI]
 
 
+	Serial Number: W87382WTX88
+
+       product: RV630/M76 [Mobility Radeon HD 2600 XT/2700]
+       vendor: Advanced Micro Devices, Inc. [AMD/ATI]
+
+

@@ -46,3 +46,9 @@ Model name:            Intel(R) Core(TM) i3 CPU         540  @ 3.07GHz
 Core(s) per socket:    2
 
 
+	Serial Number: W87382WTX88
+
+Model name:            Intel(R) Core(TM)2 Duo CPU     T7700  @ 2.40GHz
+Core(s) per socket:    2
+
+
