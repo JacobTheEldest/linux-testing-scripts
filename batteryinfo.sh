@@ -1,18 +1,24 @@
-designwh=$(upower -i $(upower -e | grep BAT) | grep energy-full-design | awk {'print $2'})
-fullwh=$(upower -i $(upower -e | grep BAT) | grep energy-full: | awk {'print $2'})
-voltage=$(upower -i $(upower -e | grep BAT) | grep voltage | awk {'print $2'})
-capacity=$(upower -i $(upower -e | grep BAT) | grep capacity: | awk {'print $2'})
-empty=$(upower -i $(upower -e | grep BAT) | grep "time to empty:")
+batpath=$(upower -e | grep BAT)
 
-# convert Wh to mAh
-designmAh=$(echo "$designwh * 1000 / $voltage" | bc)
-fullmAh=$(echo "$fullwh * 1000 / $voltage" | bc)
+if [ -n "$batpath" ]; then
+    designwh=$(upower -i $batpath | grep energy-full-design | awk {'print $2'})
+    fullwh=$(upower -i $batpath | grep energy-full: | awk {'print $2'})
+    voltage=$(upower -i $batpath | grep voltage | awk {'print $2'})
+    capacity=$(upower -i $batpath | grep capacity: | awk {'print $2'})
+    empty=$(upower -i $batpath | grep "time to empty:")
 
-#display results
-echo
-echo "Full Charge Capacity / Design Capacity: $capacity"
-echo "Capacity (Whr): ${designwh%%.*}"
-echo "Design Capacity (mAh): $designmAh"
-echo "Full Charge Capacity (mAh): $fullmAh"
-echo "Time to Empty: ${empty:25}"
-echo
+    # convert Wh to mAh
+    designmAh=$(echo "$designwh * 1000 / $voltage" | bc)
+    fullmAh=$(echo "$fullwh * 1000 / $voltage" | bc)
+
+    #display results
+    echo
+    echo "Full Charge Capacity / Design Capacity: $capacity"
+    echo "Capacity (Whr): ${designwh%%.*}"
+    echo "Design Capacity (mAh): $designmAh"
+    echo "Full Charge Capacity (mAh): $fullmAh"
+    echo "Time to Empty: ${empty:25}"
+    echo
+else
+    echo "No battery detected."
+fi
