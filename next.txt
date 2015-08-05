@@ -4,3 +4,5 @@
 
 
 -Make scripts that require a specific program check for it and call installprogs.sh if it doesn't exist
+
+-Change webcam.sh to use fswebcam instead.
