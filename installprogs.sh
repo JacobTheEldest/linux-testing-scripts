@@ -5,9 +5,9 @@ program_exists () {
 }
 
 if program_exists pacman; then
-    pacman -S --noconfirm git mplayer qrencode
+    pacman -S --noconfirm git mplayer qrencode bc
 elif program_exists apt-get; then
-    apt-get install -y git mplayer qrencode
+    apt-get install -y git mplayer qrencode bc
 else
     echo "Cannot detect Package Manager. Install git, mplayer, and qrencode manually."
 fi
