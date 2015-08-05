@@ -70,3 +70,9 @@ Model name:            Intel(R) Core(TM)2 Duo CPU     E8335  @ 2.93GHz
 Core(s) per socket:    2
 
 
+	Serial Number: FJ4FWN1
+
+Model name:            Intel(R) Core(TM) i5-2520M CPU @ 2.50GHz
+Core(s) per socket:    2
+
+

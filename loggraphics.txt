@@ -70,3 +70,7 @@
        vendor: NVIDIA Corporation
 
 
+	Serial Number: FJ4FWN1
+
+
+
