@@ -34,11 +34,19 @@ while [ $iteration -lt $numbats ]; do
     # convert Wh to mAh
     designmAh=$(echo "$designwh * 1000 / $voltage" | bc)
     fullmAh=$(echo "$fullwh * 1000 / $voltage" | bc)
+    
+    # strip % from variable
+    capacity=${capacity::-1}
+    
+    # use capacity to calculate fullmAh if it is equal to design mAh
+    if [ $fullmAh -eq $designmAh ]; then
+        fullmAh=$(echo "$designmAh * $capacity / 100" | bc)
+    fi
 
     #display results
     echo
 	echo "Battery #$iteration"
-    echo "Full Charge Capacity / Design Capacity: $capacity"
+    echo "Full Charge Capacity / Design Capacity: $capacity%"
     echo "Capacity (Whr): ${designwh%%.*}"
     echo "Design Capacity (mAh): $designmAh"
     echo "Full Charge Capacity (mAh): $fullmAh"
