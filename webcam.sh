@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cheese
+fswebcam /tmp/webcam/test.png
