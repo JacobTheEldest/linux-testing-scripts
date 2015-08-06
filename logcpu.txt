@@ -82,3 +82,9 @@ Model name:            Intel(R) Core(TM) i5 CPU       M 520  @ 2.40GHz
 Core(s) per socket:    2
 
 
+	Serial Number: 9XSLRM1
+
+Model name:            Intel(R) Core(TM) i5 CPU       M 520  @ 2.40GHz
+Core(s) per socket:    2
+
+
