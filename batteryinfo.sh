@@ -1,6 +1,30 @@
+#!/bin/bash
+
 batpath=$(upower -e | grep BAT)
 
-if [ -n "$batpath" ]; then
+# Count the number of batteries
+numbats="0"
+for i in $batpath; do
+	numbats=$((numbats + 1))
+done
+
+# print number of batteries detected
+echo
+if [ $numbats -eq 0 ]; then
+    echo "No battery detected."
+elif [ $numbats -eq 1 ]; then
+    echo "Detected 1 battery"
+else
+    echo "Detected $numbats batteries."
+fi
+
+iteration="0"
+while [ $iteration -lt $numbats ]; do
+	iteration=$((iteration + 1))
+	
+	batpath=$(upower -e | grep -m $iteration BAT | tail -1)
+	
+	# store fields in variables
     designwh=$(upower -i $batpath | grep energy-full-design | awk {'print $2'})
     fullwh=$(upower -i $batpath | grep energy-full: | awk {'print $2'})
     voltage=$(upower -i $batpath | grep voltage | awk {'print $2'})
@@ -13,12 +37,11 @@ if [ -n "$batpath" ]; then
 
     #display results
     echo
+	echo "Battery #$iteration"
     echo "Full Charge Capacity / Design Capacity: $capacity"
     echo "Capacity (Whr): ${designwh%%.*}"
     echo "Design Capacity (mAh): $designmAh"
     echo "Full Charge Capacity (mAh): $fullmAh"
     echo "Time to Empty: ${empty:25}"
     echo
-else
-    echo "No battery detected."
-fi
+done
