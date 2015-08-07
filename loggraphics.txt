@@ -86,3 +86,9 @@
        vendor: Intel Corporation
 
 
+	Serial Number: W80346Z8ATP
+
+       product: MCP89 [GeForce 320M]
+       vendor: NVIDIA Corporation
+
+
