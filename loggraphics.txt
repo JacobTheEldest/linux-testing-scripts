@@ -92,3 +92,7 @@
        vendor: NVIDIA Corporation
 
 
+	Serial Number: A8N0AS73753235      
+
+
+
