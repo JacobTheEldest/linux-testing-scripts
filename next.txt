@@ -3,3 +3,5 @@
 -Test graphics.sh on PCs. Accuracy on Macs is unacceptable. Will need to show the system serial qr and tell the user to look it up on everymac using what info the script can gather.
 
 -Make scripts that require a specific program check for it and call installprogs.sh if it doesn't exist
+
+-Change batteryinfo.sh to use BAT# + 1 for the displayed battery number.
