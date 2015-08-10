@@ -29,6 +29,7 @@ while [ $iteration -lt $numbats ]; do
     fullwh=$(upower -i $batpath | grep energy-full: | awk {'print $2'})
     voltage=$(upower -i $batpath | grep voltage | awk {'print $2'})
     capacity=$(upower -i $batpath | grep capacity: | awk {'print $2'})
+    percentage=$(upower -i $batpath | grep percentage: | awk {'print $2'})
     empty=$(upower -i $batpath | grep "time to empty:")
 
     # convert Wh to mAh
@@ -50,6 +51,7 @@ while [ $iteration -lt $numbats ]; do
     echo "Capacity (Whr): ${designwh%%.*}"
     echo "Design Capacity (mAh): $designmAh"
     echo "Full Charge Capacity (mAh): $fullmAh"
+    echo "Currrent Percentage: $percentage"
     echo "Time to Empty: ${empty:25}"
     echo
 done
