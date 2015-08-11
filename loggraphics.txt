@@ -96,3 +96,9 @@
 
 
 
+	Serial Number: MXF6500C0P
+
+       product: C51 [GeForce 6150 LE]
+       vendor: NVIDIA Corporation
+
+

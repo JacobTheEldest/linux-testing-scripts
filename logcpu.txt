@@ -100,3 +100,9 @@ Model name:            Intel(R) Core(TM) i7 CPU       Q 740  @ 1.73GHz
 Core(s) per socket:    4
 
 
+	Serial Number: MXF6500C0P
+
+Model name:            AMD Athlon(tm) 64 Processor 3800+
+Core(s) per socket:    1
+
+
