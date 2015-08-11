@@ -8,4 +8,6 @@
 
 -dmidecode has some inaccuracies. Change memory.sh to use spd info directly. (https://wiki.archlinux.org/index.php/Lm-sensors)
 
--Add percentage: to batteryinfo.sh
+-Make scripts only show output that I intend. No status or error messages.
+
+-Make a qrmemory.sh
