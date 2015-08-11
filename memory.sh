@@ -33,10 +33,10 @@ while [ $iteration -lt $total ]; do
 	# store the results in variables
 	bank=$(dmidecode -t memory | grep -m $iteration "Bank Locator:" | tail -1)
 	locator=$(dmidecode -t memory | grep -v Bank | grep -m $iteration "Locator:" | tail -1)
-	size=$(dmidecode -t memory | grep -m $iteration "Size:" | tail -1 | awk {'print $2'})
+	size=$(dmidecode -t memory | grep -vE "Installed|Enabled|Maximum" | grep -m $iteration "Size:" | tail -1 | awk {'print $2'})
 	form=$(dmidecode -t memory | grep -m $iteration "Form Factor:" | tail -1)
-	type=$(dmidecode -t memory | grep -v Correction | grep -m $iteration "Type:" | tail -1 | awk {'print $2'})
-	speed=$(dmidecode -t memory | grep -m $iteration "Speed:" | tail -1 | awk {'print $2'})
+	type=$(dmidecode -t memory | grep -vE "DIMM|Correction" | grep -m $iteration "Type:" | tail -1 | awk {'print $2'})
+	speed=$(dmidecode -t memory | grep -v "Current" | grep -m $iteration "Speed:" | tail -1 | awk {'print $2'})
 	
 	# convert size into GB if necessary
 	if [ $size != "No" ]; then
@@ -48,6 +48,7 @@ while [ $iteration -lt $total ]; do
 		fi
 	
 		# convert Type from DDR to PC
+		echo $type
 		type=${type:3}
 		type="Type: PC$type"
 	
