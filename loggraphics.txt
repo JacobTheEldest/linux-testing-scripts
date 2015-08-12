@@ -102,3 +102,9 @@
        vendor: NVIDIA Corporation
 
 
+	Serial Number: 9YYL3N1
+
+       product: Core Processor Integrated Graphics Controller
+       vendor: Intel Corporation
+
+
