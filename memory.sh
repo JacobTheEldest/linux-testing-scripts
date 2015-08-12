@@ -1,20 +1,11 @@
 #!/bin/bash
 
-#+goal is to display each module's values in this order:
-#+\n
-#+Bank Locator:
-#+Locator:
-#+Size:
-#+Form Factor:
-#+Type:
-#+Speed:
-
-#Then have the script convert:
+#Script converts:
 #Size from MB to GB where appropriate
 #Type from DDRx to PCx
 #Speed from 'Data transfers per second in millions' to 'Peak transfer rate in MB/s' (*8)
 
-#dmidecode -t memory | grep -E "Locator|Size|Form\ Factor|Type:|Speed" | grep -v "Correction"
+
 
 #count the number of slots (empty and full)
 #total=$(dmidecode -t memory | grep "Number Of Devices:" | awk {'print $4'})
@@ -33,7 +24,7 @@ while [ $iteration -lt $total ]; do
 	# store the results in variables
 	bank=$(dmidecode -t memory | grep -m $iteration "Bank Locator:" | tail -1)
 	locator=$(dmidecode -t memory | grep -v Bank | grep -m $iteration "Locator:" | tail -1)
-	size=$(dmidecode -t memory | grep -vE "Installed|Enabled|Maximum" | grep -m $iteration "Size:" | tail -1 | awk {'print $2'})
+	size=$(dmidecode -t memory | grep -vE "Enabled|Maximum" | grep -m $iteration "Size:" | tail -1 | awk {'print $2'})
 	form=$(dmidecode -t memory | grep -m $iteration "Form Factor:" | tail -1)
 	type=$(dmidecode -t memory | grep -vE "DIMM|Correction" | grep -m $iteration "Type:" | tail -1 | awk {'print $2'})
 	speed=$(dmidecode -t memory | grep -v "Current" | grep -m $iteration "Speed:" | tail -1 | awk {'print $2'})
