@@ -120,3 +120,9 @@
        vendor: NVIDIA Corporation
 
 
+	Serial Number: QP03480WDNM
+
+       product: RV730/M96-XT [Mobility Radeon HD 4670]
+       vendor: Advanced Micro Devices, Inc. [AMD/ATI]
+
+
