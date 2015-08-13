@@ -114,3 +114,9 @@
        vendor: Intel Corporation
 
 
+	Serial Number: W8945UZW5PC
+
+       product: MCP7A [GeForce 9400]
+       vendor: NVIDIA Corporation
+
+
