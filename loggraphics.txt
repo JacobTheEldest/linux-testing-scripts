@@ -108,3 +108,9 @@
        vendor: Intel Corporation
 
 
+	Serial Number: 9K8WRM1
+
+       product: Core Processor Integrated Graphics Controller
+       vendor: Intel Corporation
+
+
