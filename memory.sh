@@ -39,7 +39,6 @@ while [ $iteration -lt $total ]; do
 		fi
 	
 		# convert Type from DDR to PC
-		echo $type
 		type=${type:3}
 		type="Type: PC$type"
 	
