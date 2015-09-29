@@ -136,3 +136,9 @@ Model name:            Intel(R) Core(TM) i3 CPU         540  @ 3.07GHz
 Core(s) per socket:    2
 
 
+	Serial Number: 9KM2LQ1
+
+Model name:            Intel(R) Core(TM) i7-2820QM CPU @ 2.30GHz
+Core(s) per socket:    4
+
+
