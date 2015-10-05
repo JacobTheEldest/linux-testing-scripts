@@ -1,13 +1,15 @@
 #!/bin/bash
 
-amixer sset 'Master' unmute
-amixer sset 'Master' 100%
-amixer sset 'Front' unmute
-amixer sset 'Front' 100%
-amixer sset 'Headphone' unmute
-amixer sset 'Headphone' 100%
-amixer sset 'Speaker' unmute
-amixer sset 'Speaker' 100%
-amixer sset 'Bass Speaker' unmute
-amixer sset 'Bass Speaker' 100%
+amixer -q sset 'Master' unmute
+amixer -q sset 'Master' 100%
+amixer -q sset 'Front' unmute
+amixer -q sset 'Front' 100%
+amixer -q sset 'Headphone' unmute
+amixer -q sset 'Headphone' 100%
+amixer -q sset 'Speaker' unmute
+amixer -q sset 'Speaker' 100%
+amixer -q sset 'Bass Speaker' unmute
+amixer -q sset 'Bass Speaker' 100%
+amixer -q sset 'Mono' unmute
+amixer -q sset 'Mono' 100%
 mplayer ./sound.mp3

@@ -40,6 +40,13 @@ while [ $iteration -lt $total ]; do
 	
 		# convert Type from DDR to PC
 		type=${type:3}
+		if [ "$type" = "" ]; then
+		    if [ $speed -ge 533 ] && [ $speed -le 800 ]; then
+		        type="2"
+	        elif [ $speed -ge 1066 ]; then
+	            type="3"
+	        fi
+	    fi
 		type="Type: PC$type"
 	
 		# convert speed
