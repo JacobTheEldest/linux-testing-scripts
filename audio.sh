@@ -2,6 +2,8 @@
 
 amixer -q sset 'Master' unmute
 amixer -q sset 'Master' 100%
+amixer -q sset 'PCM' unmute
+amixer -q sset 'PCM' 100%
 amixer -q sset 'Front' unmute
 amixer -q sset 'Front' 100%
 amixer -q sset 'Headphone' unmute
