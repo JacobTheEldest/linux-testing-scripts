@@ -14,4 +14,5 @@ amixer -q sset 'Bass Speaker' unmute
 amixer -q sset 'Bass Speaker' 100%
 amixer -q sset 'Mono' unmute
 amixer -q sset 'Mono' 100%
+
 mplayer ./sound.mp3
