@@ -39,6 +39,9 @@ while [ $iteration -lt $numbats ]; do
     # strip % from variable
     capacity=${capacity::-1}
     
+    # correct for inaccuracies in Capacity (Whr)
+    whr=$(echo "$designwh - 1" | bc)
+    
     # use capacity to calculate fullmAh if it is equal to design mAh
     if [ $fullmAh -eq $designmAh ]; then
         fullmAh=$(echo "$designmAh * $capacity / 100" | bc)
@@ -48,7 +51,7 @@ while [ $iteration -lt $numbats ]; do
     echo
 	echo "Battery #$iteration"
     echo "Full Charge Capacity / Design Capacity: $capacity%"
-    echo "Capacity (Whr): ${designwh%%.*}"
+    echo "Capacity (Whr): ${whr%%.*}"
     echo "Design Capacity (mAh): $designmAh"
     echo "Full Charge Capacity (mAh): $fullmAh"
     echo "Currrent Percentage: $percentage"
