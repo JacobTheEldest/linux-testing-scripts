@@ -37,16 +37,27 @@ if [ ! -d /tmp/qrhdd/ ]; then
 	mkdir /tmp/qrhdd
 fi
 rm -f /tmp/qrhdd/* #Clear the directory before creating new files
-qrencode -l H -o /tmp/qrhdd/0HDDManu.png "$hddmanu"
-qrencode -l H -o /tmp/qrhdd/1HDDModelNumber.png "$hddmodelnumber"
-qrencode -l H -o /tmp/qrhdd/2HDDSize.png "$hddsize"
-qrencode -l H -o /tmp/qrhdd/3HDDRate.png "$hddrate"
-qrencode -l H -o /tmp/qrhdd/4HDDSerialNumber.png "$hddserial"
+qrencode -t UTF8 -o /tmp/qrhdd/Manufacturer "$hddmanu"
+qrencode -t UTF8 -o /tmp/qrhdd/ModelNumber "$hddmodelnumber"
+qrencode -t UTF8 -o /tmp/qrhdd/Size "$hddsize"
+qrencode -t UTF8 -o /tmp/qrhdd/RPM "$hddrate"
+qrencode -t UTF8 -o /tmp/qrhdd/Serial "$hddserial"
 
 # Display QR Codes
-echo "You can cycle through the QR Codes with the arrow keys."
-if [ -e /tmp/qrhdd/0HDDManu.png ]; then
-	eog /tmp/qrhdd/0HDDManu.png
-else
-	eog /tmp/qrhdd/1HDDModelNumber.png
+if [ -e /tmp/qrhdd/Manufacturer ]; then
+	echo "Manufacturer:"
+	cat /tmp/qrhdd/Manufacturer
 fi
+echo "Model Number:"
+cat /tmp/qrhdd/ModelNumber
+echo "Size:"
+cat /tmp/qrhdd/Size
+echo "RPM:"
+cat /tmp/qrhdd/RPM
+echo "Serial Number:"
+cat /tmp/qrhdd/Serial
+
+echo
+echo
+echo "Use Shift + Page Up or Shift + Page Down to scroll."
+echo
