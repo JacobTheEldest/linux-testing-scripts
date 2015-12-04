@@ -52,6 +52,7 @@ echo "Model Number:"
 cat /tmp/qrhdd/ModelNumber
 echo "Size:"
 cat /tmp/qrhdd/Size
+read -n1
 echo "RPM:"
 cat /tmp/qrhdd/RPM
 echo "Serial Number:"
