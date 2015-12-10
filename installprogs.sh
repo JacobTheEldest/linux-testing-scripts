@@ -5,7 +5,7 @@ program_exists () {
 }
 
 if program_exists pacman; then
-    pacman -S --noconfirm git mplayer qrencode bc fswebcam hdparm lshw alsa-utils cdrkit
+    pacman -S --noconfirm dmidecode git mplayer qrencode bc fswebcam hdparm lshw alsa-utils cdrkit
 elif program_exists apt-get; then
     apt-get update
     apt-get install -y git mplayer2 qrencode bc fswebcam hdparm lshw alsa-utils
