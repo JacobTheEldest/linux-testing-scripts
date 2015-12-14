@@ -1,13 +1,13 @@
 -Figure out how to parse cpu.sh output to match what the database expects to facilitate QR scanning
 
--Test graphics.sh on PCs. Accuracy on Macs is unacceptable. Will need to show the system serial qr and tell the user to look it up on everymac using what info the script can gather.
-
 -Make scripts that require a specific program check for it and call installprogs.sh if it doesn't exist
-
--Change batteryinfo.sh to use BAT# + 1 for the displayed battery number.
-
--dmidecode has some inaccuracies. Change memory.sh to use spd info directly. (https://wiki.archlinux.org/index.php/Lm-sensors)
 
 -Make scripts only show output that I intend. No status or error messages.
 
--Make a qrmemory.sh
+-Make webcam.sh check for file existence rather than displaying it.
+
+-Make each script format its output differently based on arguments when calling it.
+	-Null argument is standard human readable
+	-qr outputs qr codes
+	-xml outputs White-Canyon/Makor compatible xml format
+	-master formats info in a way that is easily readable in combination with many other scripts
