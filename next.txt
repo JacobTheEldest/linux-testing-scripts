@@ -11,3 +11,11 @@
 	-qr outputs qr codes
 	-xml outputs White-Canyon/Makor compatible xml format
 	-master formats info in a way that is easily readable in combination with many other scripts
+
+-complete keyboard.sh
+	-Create a master file of keycodes to be checked against
+	-Script will generate a log file of keycodes pressed using showkey
+	-Script will compare generated log file to master list and output a list of keys not pressed and write that list to file
+	-Script will offer a chance to retry comparing to unpressed keys file instead of master
+
+-add universe and multiverse to installprogs for ubuntu
