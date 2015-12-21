@@ -1,11 +1,18 @@
 #!/bin/bash
 
-if [ ! -d /tmp/webcam/ ]; then
-	mkdir /tmp/webcam
+#Delete any existing test data
+if [ -d /tmp/webcam/ ]; then
+	rm -rf /tmp/webcam/*
+	rm dir /tmp/webcam
 fi
-rm -f /tmp/webcam/* #Clear the directory before creating new files
 
+#create temporary directory for test files.
+mkdir /tmp/webcam
+
+#capture image (silence terminal output (stderr channel))
 fswebcam /tmp/webcam/test.jpeg 2> /dev/null
+
+#Check if a file exists
 if [ -a /tmp/webcam/test.jpeg ]; then
 	echo "Pass!"
 else
