@@ -40,5 +40,5 @@ while [ "$test" != 'q' ]; do
 done
 
 #reset color to black when done
-#setterm -background black
-#clear
+setterm -background black
+clear
