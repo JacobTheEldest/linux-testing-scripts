@@ -1,10 +1,6 @@
 -Figure out how to parse cpu.sh output to match what the database expects to facilitate QR scanning
 
--Make scripts that require a specific program check for it and call installprogs.sh if it doesn't exist
-
 -Make scripts only show output that I intend. No status or error messages.
-
--Make webcam.sh check for file existence rather than displaying it.
 
 -Make each script format its output differently based on arguments when calling it.
 	-Null argument is standard human readable
@@ -12,10 +8,5 @@
 	-xml outputs White-Canyon/Makor compatible xml format
 	-master formats info in a way that is easily readable in combination with many other scripts
 
--complete keyboard.sh
-	-Create a master file of keycodes to be checked against
-	-Script will generate a log file of keycodes pressed using showkey
-	-Script will compare generated log file to master list and output a list of keys not pressed and write that list to file
-	-Script will offer a chance to retry comparing to unpressed keys file instead of master
 
 -add universe and multiverse to installprogs for ubuntu
