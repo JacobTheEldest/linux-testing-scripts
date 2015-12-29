@@ -3,10 +3,31 @@
 -Make scripts only show output that I intend. No status or error messages.
 
 -Make each script format its output differently based on arguments when calling it.
-	-Null argument is standard human readable
+	-Null argument is standard human readable including tests
+	-notest outputs standard human readable without performing any tests
 	-qr outputs qr codes
 	-xml outputs White-Canyon/Makor compatible xml format
 	-master formats info in a way that is easily readable in combination with many other scripts
 
-
 -add universe and multiverse to installprogs for ubuntu
+
+-clean up network.sh output
+
+-create wifi.sh
+
+-standardize output in these scripts:
+    # Info Scripts
+    batteryinfo.sh
+    cpu.sh
+    graphics.sh
+    hddinfo.sh
+    memory.sh
+    network.sh
+    systeminfo.sh
+
+    # Test Scripts
+    webcam.sh
+    monitor.sh
+    keytest.sh
+    audio.sh
+    batterytest.sh
