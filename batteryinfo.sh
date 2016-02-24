@@ -21,9 +21,9 @@ fi
 iteration="0"
 while [ $iteration -lt $numbats ]; do
 	iteration=$((iteration + 1))
-	
+
 	batpath=$(upower -e | grep -m $iteration BAT | tail -1)
-	
+
 	# store fields in variables
     designwh=$(upower -i $batpath | grep energy-full-design | awk {'print $2'})
     fullwh=$(upower -i $batpath | grep energy-full: | awk {'print $2'})
@@ -35,25 +35,31 @@ while [ $iteration -lt $numbats ]; do
     # convert Wh to mAh
     designmAh=$(echo "$designwh * 1000 / $voltage" | bc)
     fullmAh=$(echo "$fullwh * 1000 / $voltage" | bc)
-    
+
     # strip % from variable
     capacity=${capacity::-1}
-    
+
     # correct for inaccuracies in Capacity (Whr)
     whr=$(echo "$designwh - 1" | bc)
-    
+
+
     # use capacity to calculate fullmAh if it is equal to design mAh
     if [ $fullmAh -eq $designmAh ]; then
         fullmAh=$(echo "$designmAh * $capacity / 100" | bc)
+    fi
+    if [ $(echo " $fullwh == $whr" | bc) -eq 1 ]; then
+        fullwh=$(echo "$designwh * $capacity / 100" | bc)
+    fi
+    if [ $(echo " $fullwh > $whr" | bc) -eq 1 ]; then
+        fullwh=$whr
     fi
 
     #display results
     echo
 	echo "Battery #$iteration"
     echo "Full Charge Capacity / Design Capacity: $capacity%"
-    echo "Capacity (Whr): ${whr%%.*}"
-    echo "Design Capacity (mAh): $designmAh"
-    echo "Full Charge Capacity (mAh): $fullmAh"
+    echo "Design Capacity (Whr): ${whr%%.*}"
+    echo "Full Charge Capacity (Whr): ${fullwh%%.*}"
     echo "Currrent Percentage: $percentage"
     echo "Time to Empty: ${empty:25}"
     echo
