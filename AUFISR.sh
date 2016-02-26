@@ -34,3 +34,5 @@ mount --rbind /sys sys/
 mount --rbind /dev dev/
 chroot ./ grub-install --recheck /dev/${1}
 chroot ./ grub-mkconfig -o /boot/grub/grub.cfg
+
+shutdown -h now
