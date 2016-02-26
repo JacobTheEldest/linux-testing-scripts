@@ -14,12 +14,12 @@ cores=$(cat /proc/cpuinfo | grep -i -m 1 "cpu cores" | awk {'print $NF'})
 
 #Strip undesirable characters from cpu string
 main=${main/model name/}
-main=${main/:/}
-main=${main/CPU/}
-main=${main/(R)/}
-main=${main/(TM)/\ }
-main=${main/-/\ }
-main=${main/@/}
+main=${main//:/}
+main=${main//CPU/}
+main=${main//(R)/}
+main=${main//(TM)/\ }
+main=${main//-/\ }
+main=${main//@/}
 
 # define variables and strip from main string
 speed=$(echo $main | awk {'print $NF'})
