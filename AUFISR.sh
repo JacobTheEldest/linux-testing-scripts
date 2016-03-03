@@ -14,20 +14,20 @@ mkfs.ext4 -O "^has_journal" /dev/${1}1
 
 # Copy entire filesystem
 mount /dev/${1}1 /mnt/
-cp -rp /bin/* /mnt/
-cp -rp /boot/* /mnt/
-cp -rp /etc/* /mnt/
-cp -rp /home/* /mnt/
-cp -rp /lib/* /mnt/
-cp -rp /lib64/* /mnt/
-cp -rp /lost+found/* /mnt/
-cp -rp /opt/* /mnt/
-cp -rp /root/* /mnt/
-cp -rp /run/* /mnt/
-cp -rp /sbin/* /mnt/
-cp -rp /srv/* /mnt/
-cp -rp /usr/* /mnt/
-cp -rp /var/* /mnt/
+cp -rp /bin /mnt/
+cp -rp /boot /mnt/
+cp -rp /etc /mnt/
+cp -rp /home /mnt/
+cp -rp /lib /mnt/
+cp -rp /lib64 /mnt/
+cp -rp /lost+found /mnt/
+cp -rp /opt /mnt/
+cp -rp /root /mnt/
+cp -rp /run /mnt/
+cp -rp /sbin /mnt/
+cp -rp /srv /mnt/
+cp -rp /usr /mnt/
+cp -rp /var /mnt/
 mkdir /mnt/mnt
 mkdir /mnt/dev
 mkdir /mnt/proc
