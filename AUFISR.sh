@@ -55,6 +55,7 @@ chroot ./ grub-mkconfig -o /boot/grub/grub.cfg
 
 # Updating target scripts
 echo "Updating target scripts"
+cd /mnt/home/testing/linux-testing-scripts
 git pull
 
 # Shutdown
