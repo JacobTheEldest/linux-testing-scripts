@@ -9,18 +9,16 @@
 
 #count the number of slots (empty and full)
 #total=$(dmidecode -t memory | grep "Number Of Devices:" | awk {'print $4'})
-total="0"
-memory_device=$(dmidecode -t memory | grep "Memory Device")
+total=$(dmidecode -t memory | grep "Memory Device" | wc -l)
 for i in $memory_device; do
 	total=$((total + 1))
 done
-total=$((total / 2))
 
 #print the info for each module
 iteration="0"
 while [ $iteration -lt $total ]; do
 	iteration=$((iteration + 1))
-	
+
 	# store the results in variables
 	bank=$(dmidecode -t memory | grep -m $iteration "Bank Locator:" | tail -1)
 	locator=$(dmidecode -t memory | grep -v Bank | grep -m $iteration "Locator:" | tail -1)
@@ -28,7 +26,7 @@ while [ $iteration -lt $total ]; do
 	form=$(dmidecode -t memory | grep -m $iteration "Form Factor:" | tail -1)
 	type=$(dmidecode -t memory | grep -vE "DIMM|Correction" | grep -m $iteration "Type:" | tail -1 | awk {'print $2'})
 	speed=$(dmidecode -t memory | grep -v "Current" | grep -m $iteration "Speed:" | tail -1 | awk {'print $2'})
-	
+
 	# convert size into GB if necessary
 	if [ $size != "No" ]; then
 		if [ $size -gt 512 ]; then
@@ -37,7 +35,7 @@ while [ $iteration -lt $total ]; do
 		else
 			size="Size: $size MB"
 		fi
-	
+
 		# convert Type from DDR to PC
 		type=${type:3}
 		if [ "$type" = "" ]; then
@@ -48,7 +46,7 @@ while [ $iteration -lt $total ]; do
 	        fi
 	    fi
 		type="Type: PC$type"
-	
+
 		# convert speed
 		speed=$((speed * 8))
 		speed=$((speed - (speed % 100)))
@@ -60,7 +58,7 @@ while [ $iteration -lt $total ]; do
 		type="Type: No Memory Module"
 		speed="Speed: No Memory Module"
 	fi
-	
+
 	#display the results
 	echo
 	echo $bank
