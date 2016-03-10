@@ -21,7 +21,6 @@ echo "Copying (2/14)"; cp -rp /boot /mnt/
 echo "Copying (3/14)"; cp -rp /etc /mnt/
 echo "Copying (4/14)"; cp -rp /home /mnt/
 echo "Copying (5/14)"; cp -rp /lib /mnt/
-echo "Copying (6/14)"; cp -rp /lib64 /mnt/
 echo "Copying (7/14)"; cp -rp /lost+found /mnt/
 echo "Copying (8/14)"; cp -rp /opt /mnt/
 echo "Copying (9/14)"; cp -rp /root /mnt/
