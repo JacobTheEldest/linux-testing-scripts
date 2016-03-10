@@ -11,13 +11,7 @@
 
 -add universe and multiverse to installprogs for ubuntu
 
--clean up network.sh output
-
 -create wifi.sh
-
--create arch_replicator.sh
-
--create arch_repair.sh
 
 -standardize output in these scripts:
     # Info Scripts
