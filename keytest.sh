@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "This test must be run from a TTY"
+
 #remove temp files from previous keytest
 if [ -d /tmp/keytest ]; then
 	rm -rf /tmp/keytest/* > /dev/null
@@ -58,5 +60,5 @@ while [ $test == 'y' ]; do
     else
         test='n'
     fi
-	
+
 done
