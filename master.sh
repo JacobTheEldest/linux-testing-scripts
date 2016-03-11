@@ -1,32 +1,69 @@
 #!/bin/bash
 
-#Initialize variables
-#!!!vars
-
-#Ask user for initial info
-#!!!Desktop or laptop
-
- 
-
-
-
-
-
-
-
+echo
+echo
+echo
+echo "Use './master.sh l' for laptops."
+echo
 
 # Info Scripts
-./batteryinfo.sh $1
-./cpu.sh $1
-./graphics.sh $1
-./hddinfo.sh $1
-./memory.sh $1
-./network.sh $1
-./systeminfo.sh $1
+echo
+echo "System Information:"
+./systeminfo.sh
+read -n1 test
 
-# Test Scripts
-./webcam.sh $1
-./monitor.sh $1
-./keytest.sh $1
-./audio.sh $1
-./batterytest.sh $1
+echo
+echo "Monitor Information:"
+./monitor_info.sh
+read -n1 test
+
+echo
+echo "Processor:"
+./cpu.sh
+read -n1 test
+
+echo
+echo "Memory:"
+./memory.sh
+read -n1 test
+
+echo
+echo "Battery:"
+./batteryinfo.sh
+read -n1 test
+
+echo
+echo "Networking:"
+./network.sh
+read -n1 test
+
+echo
+echo "Graphics:"
+./graphics.sh
+read -n1 test
+
+echo
+echo "Hard Drive:"
+./hddinfo.sh sda
+read -n1 test
+
+echo
+echo "Audio Test"
+./audio.sh
+read -n1 test
+
+if [ "$1" = 'l' ]; then
+    echo
+    echo "Keyboard Test"
+    ./keytest.sh
+    read -n1 test
+
+    echo
+    echo "Monitor Test"
+    ./monitor_test.sh
+    read -n1 test
+
+    echo
+    echo "Webcam Test"
+    ./webcam.sh
+fi
