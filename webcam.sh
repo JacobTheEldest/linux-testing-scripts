@@ -1,9 +1,11 @@
 #!/bin/bash
 
+echo "Type 'cheese' to test more than one camera."
+
 #Delete any existing test data
 if [ -d /tmp/webcam/ ]; then
 	rm -rf /tmp/webcam/*
-	rm dir /tmp/webcam
+	rmdir /tmp/webcam
 fi
 
 #create temporary directory for test files.
