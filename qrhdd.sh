@@ -25,9 +25,9 @@ if [ "$hddmanu" = "Hitachi" ]; then
 fi
 
 if [ $hddsize -ge 1000 ] && [ $hddsize -le 1024 ]; then
-	hddsize="1 TB"	
+	hddsize="1 TB"
 elif [ $hddsize -ge 2000 ] && [ $hddsize -le 2048 ]; then
-	hddsize="2 TB"	
+	hddsize="2 TB"
 elif [ $hddsize -ge 3000 ] && [ $hddsize -le 3072 ]; then
 	hddsize="3 TB"
 fi
