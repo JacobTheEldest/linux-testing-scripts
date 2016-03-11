@@ -1,6 +1,8 @@
 #!/bin/bash
 
+echo
 echo "Type 'cheese' to test more than one camera."
+echo
 
 #Delete any existing test data
 if [ -d /tmp/webcam/ ]; then
@@ -20,3 +22,5 @@ if [ -a /tmp/webcam/test.jpeg ]; then
 else
 	echo "Fail!"
 fi
+
+echo

@@ -1,6 +1,8 @@
 #!/bin/bash
 
+echo
 echo "Press any key to cycle through colors.  Press q to quit."
+echo
 
 #init variables
 test='y'

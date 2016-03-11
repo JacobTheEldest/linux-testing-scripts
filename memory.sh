@@ -3,7 +3,7 @@
 #Script converts:
 #Size from MB to GB where appropriate
 #Type from DDRx to PCx
-#Speed from 'Data transfers per second in millions' to 'Peak transfer rate in MB/s' (*8)
+#Speed from 'Data transfers per second in millions in MHz' to 'Peak transfer rate in MB/s' (*8)
 
 
 

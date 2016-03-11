@@ -1,6 +1,8 @@
 #!/bin/bash
 
+echo
 echo "This test must be run from a TTY"
+echo
 
 #remove temp files from previous keytest
 if [ -d /tmp/keytest ]; then
@@ -56,9 +58,9 @@ while [ $test == 'y' ]; do
 	#Retry?
 	if [ -s /tmp/keytest/unpresseddisplay ]; then
     	echo "Do you want to try again? (y/n)"
-	    read test
+	    read -n1 test
     else
         test='n'
-    fi
+	fi
 
 done
