@@ -1,7 +1,7 @@
 #!/bin/bash
 
-This script ejects the cd tray, and waits for the cd to be automounted.
-It then outputs the label on the cd and ejects again.
+# This script ejects the cd tray, and waits for the cd to be automounted.
+# It then outputs the label on the cd and ejects again.
 
 eject /dev/sr0
 echo
